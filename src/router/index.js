@@ -1,42 +1,47 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
 // 路由懒加载
-const Home  = ()=> import('views/home/Home.vue');
-const Cart  = ()=> import('views/cart/Cart.vue');
-const Category  = ()=> import('views/category/Category.vue');
-const Profile  = ()=> import('views/profile/Profile.vue');
+const Home = () => import("views/home/Home.vue");
+const Cart = () => import("views/cart/Cart.vue");
+const Category = () => import("views/category/Category.vue");
+const Profile = () => import("views/profile/Profile.vue");
+const Detail = () => import("views/detail/Detail.vue");
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     // 默认路由
-    path:'',
-    redirect:'/home'
+    path: "",
+    redirect: "/home"
   },
   {
-    path:'/home',
+    path: "/home",
     component: Home
   },
   {
-    path:'/cart',
-    component:Cart
+    path: "/cart",
+    component: Cart
   },
   {
-    path:'/category',
-    component:Category
+    path: "/category",
+    component: Category
   },
   {
-    path:'/profile',
+    path: "/profile",
     component: Profile
+  },
+  {
+    path: "/detail/:iid",
+    component: Detail
   }
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;

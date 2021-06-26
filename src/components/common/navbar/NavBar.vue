@@ -29,7 +29,6 @@ export default {
   line-height: 44px;
   text-align: center;
   box-shadow: 0 1px 1px rgb(100, 100, 100, 0.1);
-  
 }
 
 .left,
@@ -39,7 +38,6 @@ export default {
 
 .center {
   flex: 1;
-  color: white;
-  font-size: 20px;
+  font-size: 16px;
 }
 </style>
